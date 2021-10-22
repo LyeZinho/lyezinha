@@ -12,7 +12,7 @@ TOKEN = os.environ['TOKEN']
 bot = commands.Bot(command_prefix='!')
 
 
-@bot.command(name='test', help='something')
+@bot.command(name='waifu', help='send some waifu pics😳')
 async def nine_nine(ctx):
   response = requests.get('https://api.waifu.pics/sfw/waifu')
   imageResponse = response.json()["url"]
