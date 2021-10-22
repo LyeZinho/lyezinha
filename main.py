@@ -2,12 +2,9 @@ import os
 import random
 import json
 from discord.ext import commands
-from dotenv import load_dotenv
 from discord import Embed
 from discord import Colour
 import requests
-
-load_dotenv()
 
 TOKEN = os.environ['TOKEN']
 
