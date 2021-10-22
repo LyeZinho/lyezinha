@@ -1,4 +1,3 @@
-# bot.py
 import os
 import random
 import json
@@ -16,9 +15,6 @@ TOKEN = os.environ['TOKEN']
 bot = commands.Bot(command_prefix='!')
 
 
-
-
-
 @bot.command(name='test', help='something')
 async def nine_nine(ctx):
   response = requests.get('https://api.waifu.pics/sfw/waifu')
@@ -29,7 +25,5 @@ async def nine_nine(ctx):
   await ctx.send(embed=embed)
   await ctx.send("{0}".format(imageResponse))
    
-
-      
 
 bot.run(TOKEN)
