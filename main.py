@@ -28,7 +28,7 @@ def get_bot_uptime(self):
 
 
 
-@bot.command(name='picwaifu', help='send some waifu pics😳')
+@bot.command(name='picwaifu', help='😳send some waifu pics😳')
 async def pic_waifu(ctx):
   response = requests.get('https://api.waifu.pics/sfw/waifu')
   imageResponse = response.json()["url"]
@@ -41,7 +41,7 @@ async def pic_waifu(ctx):
 
 
 
-@bot.command(name='picneko', help='send some neko pics😳')
+@bot.command(name='picneko', help='😳send some neko pics😳')
 async def pic_neko(ctx):
   response = requests.get('https://api.waifu.pics/sfw/neko')
   imageResponse = response.json()["url"]
@@ -55,7 +55,7 @@ async def pic_neko(ctx):
 
 
 
-@bot.command(name='picneko', help='send some neko pics😳')
+@bot.command(name='uptimr', help='⏰bot uptime⏰')
 async def uptime(ctx):
     await ctx.send('Uptime: **{}**'.format(get_bot_uptime()))
 
