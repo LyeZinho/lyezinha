@@ -30,7 +30,7 @@ async def pic_neko(ctx):
   response = requests.get('https://api.waifu.pics/sfw/neko')
   imageResponse = response.json()["url"]
   embed = Embed(
-            title="-🌸Waifu🌸-"
+            title="-🐱Nekos🐱-"
               )
   await ctx.send(embed=embed)
   await ctx.send("{0}".format(imageResponse))
