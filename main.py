@@ -55,9 +55,9 @@ async def pic_neko(ctx):
 
 
 
-@commands.command(name='uptime', help='⏰bot uptime⏰')
-async def uptime(self):
-    await self.bot.say('Uptime: **{}**'.format(self.get_bot_uptime()))
+@bot.command(name='picneko', help='send some neko pics😳')
+async def uptime(ctx):
+    await ctx.send('Uptime: **{}**'.format(get_bot_uptime()))
 
 
 bot.run(TOKEN)
