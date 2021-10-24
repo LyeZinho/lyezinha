@@ -1,0 +1,2 @@
+# lyezinha
+discord python bot 
