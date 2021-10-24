@@ -1,11 +1,13 @@
 import os
 import random
 import json
+import discord
 from discord.ext import commands
 from discord import Embed
-from discord import Colour
+from discord import colour
 import requests
-import datetime, time
+from datetime import datetime, timedelta
+
 
 TOKEN = os.environ['TOKEN']
 
@@ -13,21 +15,7 @@ TOKEN = os.environ['TOKEN']
 bot = commands.Bot(command_prefix='!')
 
 
-def get_bot_uptime(self):
-        now = datetime.datetime.utcnow()
-        delta = now - self.bot.uptime
-        hours, remainder = divmod(int(delta.total_seconds()), 3600)
-        minutes, seconds = divmod(remainder, 60)
-        days, hours = divmod(hours, 24)
-        if days:
-            fmt = '{d} days, {h} hours, {m} minutes, and {s} seconds'
-        else:
-            fmt = '{h} hours, {m} minutes, and {s} seconds'
-        return fmt.format(d=days, h=hours, m=minutes, s=seconds)
-
-
-
-
+#Commands
 @bot.command(name='picwaifu', help='😳send some waifu pics😳')
 async def pic_waifu(ctx):
   response = requests.get('https://api.waifu.pics/sfw/waifu')
@@ -41,6 +29,8 @@ async def pic_waifu(ctx):
 
 
 
+
+
 @bot.command(name='picneko', help='😳send some neko pics😳')
 async def pic_neko(ctx):
   response = requests.get('https://api.waifu.pics/sfw/neko')
@@ -50,15 +40,6 @@ async def pic_neko(ctx):
               )
   await ctx.send(embed=embed)
   await ctx.send("{0}".format(imageResponse))
-
-
-
-
-
-@bot.command(name='uptimr', help='⏰bot uptime⏰')
-async def uptime(ctx):
-    await ctx.send('Uptime: **{}**'.format(get_bot_uptime()))
-
 
 bot.run(TOKEN)
 
