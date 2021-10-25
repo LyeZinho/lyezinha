@@ -12,13 +12,15 @@ import requests
 
 
 TOKEN = os.environ['TOKEN']
+
 bot = commands.Bot(command_prefix='!', case_insensitive=True)
 
 
 @bot.event
 async def on_ready():
-      await bot.change_presence(activity=discord.Game(name="Game 1"))
-      print("Bot is ready")
+      print(" Bot is ready logged in\n name: {0} \n id: {1}".format(bot.user.name, bot.user.id))
+      await bot.change_presence(status=discord.Status.idle,
+                                activity=discord.Streaming(name="🧐 <prefix !>", url="https://www.twitch.tv/coorder_"))
 '''
 # Setting `Playing ` status
 await 
