@@ -13,7 +13,7 @@ import requests
 
 TOKEN = os.environ['TOKEN']
 
-bot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None)
+bot = commands.Bot(command_prefix='!', case_insensitive=True)
 
 
 @bot.event
@@ -21,12 +21,6 @@ async def on_ready():
       print(" Bot is ready logged in\n name: {0} \n id: {1}".format(bot.user.name, bot.user.id))
       await bot.change_presence(status=discord.Status.idle,
                                 activity=discord.Streaming(name="🧐 <prefix !>", url="https://www.twitch.tv/coorder_"))
-
-
-@bot.command()
-async def help(ctx):
-    await ctx.send('')
-
 
 
 #Commands
@@ -70,9 +64,6 @@ async def aniquote(ctx):
   embed.add_field(name="{0}".format(quoteResponse["anime"]),
   value="**{0}**\n \n{1}".format(quoteResponse["character"], quoteResponse["quote"]), inline=True)
   await ctx.send(embed=embed)
-
-
-
 
 
 
