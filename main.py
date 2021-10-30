@@ -12,15 +12,13 @@ import requests
 
 
 TOKEN = os.environ['TOKEN']
-
 bot = commands.Bot(command_prefix='!', case_insensitive=True)
 
 
 @bot.event
 async def on_ready():
-      print(" Bot is ready logged in\n name: {0} \n id: {1}".format(bot.user.name, bot.user.id))
-      await bot.change_presence(status=discord.Status.idle,
-                                activity=discord.Streaming(name="🧐 <prefix !>", url="https://www.twitch.tv/coorder_"))
+      await bot.change_presence(activity=discord.Game(name="Game 1"))
+      print("Bot is ready")
 '''
 # Setting `Playing ` status
 await 
@@ -80,7 +78,11 @@ async def aniquote(ctx):
   await ctx.send(embed=embed)
 
 
-ot.command(name='yomama', help='😎send your mother facts😎 \n command !yomama')
+
+
+
+
+@bot.command(name='yomama', help='😎send your mother facts😎 \n command !yomama')
 async def yomama(ctx):
   response = requests.get('https://yomomma-api.herokuapp.com/jokes?count=4')
   factsResponse = response.json()
