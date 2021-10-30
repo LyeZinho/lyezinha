@@ -21,6 +21,20 @@ async def on_ready():
       print(" Bot is ready logged in\n name: {0} \n id: {1}".format(bot.user.name, bot.user.id))
       await bot.change_presence(status=discord.Status.idle,
                                 activity=discord.Streaming(name="🧐 <prefix !>", url="https://www.twitch.tv/coorder_"))
+'''
+# Setting `Playing ` status
+await 
+
+# Setting `Streaming ` status
+await bot.change_presence(activity=discord.Streaming(name="My Stream", url=my_twitch_url))
+
+# Setting `Listening ` status
+await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="a song"))
+
+# Setting `Watching ` status
+await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="a movie"))
+'''
+
 
 
 #Commands
@@ -66,8 +80,7 @@ async def aniquote(ctx):
   await ctx.send(embed=embed)
 
 
-
-@bot.command(name='yomama', help='😎send your mother facts😎 \n command !yomama')
+ot.command(name='yomama', help='😎send your mother facts😎 \n command !yomama')
 async def yomama(ctx):
   response = requests.get('https://yomomma-api.herokuapp.com/jokes?count=4')
   factsResponse = response.json()
