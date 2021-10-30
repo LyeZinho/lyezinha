@@ -13,7 +13,7 @@ import requests
 
 TOKEN = os.environ['TOKEN']
 
-bot = commands.Bot(command_prefix='!', case_insensitive=True)
+bot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None)
 
 
 @bot.event
@@ -21,19 +21,11 @@ async def on_ready():
       print(" Bot is ready logged in\n name: {0} \n id: {1}".format(bot.user.name, bot.user.id))
       await bot.change_presence(status=discord.Status.idle,
                                 activity=discord.Streaming(name="🧐 <prefix !>", url="https://www.twitch.tv/coorder_"))
-'''
-# Setting `Playing ` status
-await 
 
-# Setting `Streaming ` status
-await bot.change_presence(activity=discord.Streaming(name="My Stream", url=my_twitch_url))
 
-# Setting `Listening ` status
-await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="a song"))
-
-# Setting `Watching ` status
-await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="a movie"))
-'''
+@bot.command()
+async def help(ctx):
+    await ctx.send('')
 
 
 
