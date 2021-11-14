@@ -12,12 +12,12 @@ import requests
 
 
 TOKEN = os.environ['TOKEN']
-bot = commands.Bot(command_prefix='$', case_insensitive=True)
+bot = commands.Bot(command_prefix='&', case_insensitive=True)
 
 
 @bot.event
 async def on_ready():
-      await bot.change_presence(activity=discord.Game(name="$help"))
+      await bot.change_presence(activity=discord.Game(name="&help"))
       print("Bot is ready")
 '''
 # Setting `Playing ` status
