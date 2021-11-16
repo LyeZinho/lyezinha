@@ -25,6 +25,8 @@ class Fun(commands.Cog):
       await ctx.reply(embed=embed, mention_author=False)
       await ctx.send("{0}".format(imageResponse))
     
+
+
     #Pics waifu from  api.waifu.pics
     @bot.command(name='picwaifu', help='😳send some waifu pics😳 \n command !picwaifu')
     async def pic_waifu(ctx):
@@ -36,6 +38,27 @@ class Fun(commands.Cog):
       await ctx.reply(embed=embed, mention_author=False)
       await ctx.send("{0}".format(imageResponse))
 
+
+
+    #Pics waifu from  api.waifu.pics
+    @bot.command(name='picwaifu', help='😳send some waifu pics😳 \n command !picwaifu')
+    async def pic_waifu(ctx):
+      response = requests.get('https://api.waifu.pics/sfw/waifu')
+      imageResponse = response.json()["url"]
+      embed = Embed(
+                title="-🌸Waifu🌸-"
+                  )
+      await ctx.reply(embed=embed, mention_author=False)
+      await ctx.send("{0}".format(imageResponse))
+
+
+    @bot.command(name='dance', help='😳send some waifu pics😳 \n command !picwaifu')
+    async def dance(ctx):
+      response = requests.get('https://api.waifu.pics/sfw/dance')
+      imageResponse = response.json()["url"]
+      await ctx.reply("{0}".format(imageResponse))
+
+    
     #Yomama facts from yomomma-api
     @bot.command(name='yomama', help='😎send your mother facts😎 \n command !yomama')
     async def yomama(ctx):

@@ -1,6 +1,8 @@
+import os
 import discord
 from discord.ext import commands
 import random
+from pbwrap import Pastebin
 
 class Roleplay(commands.Cog):
 
@@ -63,8 +65,17 @@ class Roleplay(commands.Cog):
     async def d20(ctx):
       ctx = ctx
       await ctx.reply('↳ `{0}` ↲'.format(random.randint(1,20)))
-
+    
+    #https://pbwrap.readthedocs.io/en/latest/pastebin.html
+    #https://pastebin.com/doc_api
+    @bot.command(name='pbmk', help='Roll 20 sides dice\n command !d20 <dice count>')
+    async def pbmk(ctx):
+      pbkey = os.environ['PBAPIKEY']
+      pb = Pastebin(pbkey)
+      url = pb.create_paste("SOnEcas", 0, "UiUiTraveco", "10M", "python")
+      await ctx.reply(url)
   
+
 
 def setup(bot):
 	bot.add_cog(Roleplay(bot))
