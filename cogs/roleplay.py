@@ -11,39 +11,39 @@ class Roleplay(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
 		
-    @bot.command(name='ping', help='Ping  \n command !ping') 
+    @bot.command(name='ping') 
     async def ping(ctx):
       await ctx.reply('Pong!', mention_author=False) #Sends a chat message. Remember to await async functions.
       
 
 
-    @bot.command(name='inviteurl', help='Bot url \n command !inviteurl')
+    @bot.command(name='inviteurl')
     async def inviteurl(ctx):
       ctx = ctx
 
       await ctx.reply('https://discordapp.com/oauth2/authorize?&client_id=' + str(self.bot.user.id) + '&scope=bot&permissions=8', mention_author=False)
 
-    @bot.command(name='d4', help='Roll 20 sides dice\n command !d20 <dice count>')
+    @bot.command(name='d4', help='Roll 4 sides dice\n command !d20 <dice count>')
     async def d4(ctx):
       ctx = ctx
       await ctx.reply('↳ `{0}` ↲'.format(random.randint(1,4)))
 
-    @bot.command(name='d6', help='Roll 20 sides dice\n command !d20 <dice count>')
+    @bot.command(name='d6', help='Roll 6 sides dice\n command !d20 <dice count>')
     async def d6(ctx):
       ctx = ctx
       await ctx.reply('↳ `{0}` ↲'.format(random.randint(1,6)))
     
-    @bot.command(name='d10', help='Roll 20 sides dice\n command !d20 <dice count>')
+    @bot.command(name='d10', help='Roll 10 sides dice\n command !d20 <dice count>')
     async def d10(ctx):
       ctx = ctx
       await ctx.reply('↳ `{0}` ↲'.format(random.randint(1,10)))
     
-    @bot.command(name='d12', help='Roll 20 sides dice\n command !d20 <dice count>')
+    @bot.command(name='d12', help='Roll 12 sides dice\n command !d20 <dice count>')
     async def d12(ctx):
       ctx = ctx
       await ctx.reply('↳ `{0}` ↲'.format(random.randint(1,12)))
     
-    @bot.command(name='d100', help='Roll 20 sides dice\n command !d20 <dice count>')
+    @bot.command(name='d100', help='Roll 100 sides dice\n command !d20 <dice count>')
     async def d100(ctx):
       ctx = ctx
       rolls = [
