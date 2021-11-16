@@ -1,7 +1,7 @@
 import os
 import discord
 from discord.ext import commands
-bot = commands.Bot(command_prefix=['!'], description='.')
+bot = commands.Bot(command_prefix=['&'], description='.')
 
 
 bot.owner_id = 524622388629995541
