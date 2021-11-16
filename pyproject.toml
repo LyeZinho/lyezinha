@@ -1,14 +1,12 @@
 [tool.poetry]
-name = "lyezinha-1"
+name = "repl_python3_LyeZinha-Ativa"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["LyeZinho1 <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-"discord.py" = "^1.7.3"
-python-dotenv = "^0.19.1"
-requests = "^2.26.0"
+discord = "^1.7.3"
 
 [tool.poetry.dev-dependencies]
 
