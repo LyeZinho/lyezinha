@@ -1,7 +1,8 @@
 import os
 import discord
 from discord.ext import commands
-bot = commands.Bot(command_prefix=['&'], description='.')
+from flask import Flask
+bot = commands.Bot(command_prefix=['-&'], description='.')
 
 
 bot.owner_id = 524622388629995541
@@ -9,6 +10,17 @@ bot.owner_id = 524622388629995541
 #Cogs
 for cog in ['cogs.fun','cogs.ready','cogs.roleplay']:
 	bot.load_extension(cog)
+
+
+app = Flask('app')
+
+@app.route('/')
+def hello_world():
+  return 'main bot'
+
+app.run(host='0.0.0.0', port=8080)
+
+
 
 
 @bot.command()
