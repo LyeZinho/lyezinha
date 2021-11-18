@@ -83,6 +83,13 @@ class Fun(commands.Cog):
       await ctx.reply("{0}".format(imageResponse))
       await ctx.send("{0} Deu um beijo em {1}".format(ctx.author ,arg))
 
+
+    @bot.command(name='kill')
+    async def kill(ctx):
+      response = requests.get('https://api.waifu.pics/sfw/kill')
+      imageResponse = response.json()["url"]
+      await ctx.reply("{0}".format(imageResponse))
+
     #Yomama facts from yomomma-api
     @bot.command(name='yomama')
     async def yomama(ctx):
