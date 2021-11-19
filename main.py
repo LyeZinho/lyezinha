@@ -23,6 +23,7 @@ async def load(ctx, cog:str):
 		await ctx.send(e)
 	else:
 		await ctx.reply('Cog: ' + cog + '\n Foi carregado com sucesso!')
+
 		
 @bot.command()
 @commands.is_owner()
