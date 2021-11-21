@@ -10,10 +10,10 @@ class Admin(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
 
-
+    bot.owner_id = 524622388629995541
     @bot.command(name='setgame')
     @commands.is_owner()
-    async def inviteurl(ctx, *, arg):
+    async def setgame(ctx, *, arg):
       ctx = ctx
       if arg == "default":        
         activity = discord.Game(name="-& for some help", type=3)
