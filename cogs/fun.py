@@ -95,16 +95,13 @@ class Fun(commands.Cog):
     async def yomama(ctx):
       response = requests.get('https://yomomma-api.herokuapp.com/jokes?count=4')
       factsResponse = response.json()
-      if factsResponse["error"] == "Rate limit exceeded: 5 per 1 minute":
-        ctx.reply("Wait 1 minut for use this command again!")
-      else:
-        embed = Embed(
+      embed = Embed(
                 title="-😎YoMama😎-"
                   )
-        embed.add_field(name="Fact 1",value="**{0}**\n".format(factsResponse[0]["joke"]), inline=True)
-        embed.add_field(name="Fact 2",value="**{0}**\n".format(factsResponse[1]["joke"]), inline=True)
-        embed.add_field(name="Fact 3",value="**{0}**\n".format(factsResponse[2]["joke"]), inline=True)
-        await ctx.reply(embed=embed, mention_author=False)
+      embed.add_field(name="Fact 1",value="**{0}**\n".format(factsResponse[0]["joke"]), inline=True)
+      embed.add_field(name="Fact 2",value="**{0}**\n".format(factsResponse[1]["joke"]), inline=True)
+      embed.add_field(name="Fact 3",value="**{0}**\n".format(factsResponse[2]["joke"]), inline=True)
+      await ctx.reply(embed=embed, mention_author=False)
 
 
     @bot.command(name='changemymind')
